@@ -1,0 +1,68 @@
+[bar1k@RockyLinux]$ ls -lR
+.:
+total 4
+drw-rwxr-x. 2 bar1k bar1k 22 Oct 23 12:55 dir
+-r--r-----. 1 root      bar1k  5 Oct 15 13:53 file
+-rw-------. 1 bar1k bar1k  0 Oct 23 13:04 file1
+-rw-rw-rw-. 1 bar1k bar1k  0 Oct 23 13:05 file2
+
+./dir:
+ls: cannot access './dir/new_file': Permission denied
+total 0
+-????????? ? ? ? ?            ? new_file
+[bar1k@RockyLinux]$ history
+    1  cd ~
+    2  mkdir test
+    3  cd test/
+    4  touch file
+    5  ll
+    6  chmod 000 file 
+    7  echo "тест" > file
+    8  cat file 
+    9  chmod u+w file 
+   10  ll
+   11  echo "test" > file
+   12  cat file 
+   13  chmod g+r file 
+   14  ll
+   15  cat file 
+   16  chmod u+r file 
+   17  ll
+   18  cat file 
+   19  mkdir dir 
+   20  cd dir/
+   21  touch new_file && echo "file 2" > new_file
+   22  l
+   23  ls
+   24  cd ..
+   25  ls
+   26  chmod u-x dir/
+   27  cat dir/new_file 
+   28  rm dir/new_file 
+   29  chown root file
+   30  l
+   31  ls
+   32  chgrp root file 
+   33  umask u=rw, g=, o=
+   34  umask -S u=rw, g=, o=
+   35  umask u=rw,g=,o=
+   36  touch file1
+   37  l
+   38  ls
+   39  ls -la
+   40  umask 0000
+   41  touch file2
+   42  ll
+   43  history 
+   44  ls
+   45  cat file
+   46  cat file
+   47  ls
+   48  cd ..
+   49  ls
+   50  cd BOS/
+   51  ls
+   52  mkdir lab2
+   53  cd lab2/
+   54  ls
+   55  history > lab2.txt
