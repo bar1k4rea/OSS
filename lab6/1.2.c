@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 extern char **environ;
-int main(int argc, char *argv[])
-{
+
+int main(int argc, char *argv[]) {
     char **ptr = environ;
     int cnt = 0;
     while (*ptr++)
