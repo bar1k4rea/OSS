@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     char **ptr = environ;
     while (*ptr++)
         cnt++;
-    printf("Number of evironment variables: %d\n", cnt);
+    printf("Number of environment variables: %d\n", cnt);
 
     return 0;
 }
